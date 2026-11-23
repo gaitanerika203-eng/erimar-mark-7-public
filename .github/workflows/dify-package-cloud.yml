@@ -44,13 +44,13 @@ jobs:
         run: |
           mkdir -p "$RUNNER_TEMP/dify-packages"
           "$RUNNER_TEMP/dify" plugin package ./dify/erimar-mark7-connector \
-            -o "$RUNNER_TEMP/dify-packages/erimar_mark7_connector-0.1.0.difypkg"
-          test -s "$RUNNER_TEMP/dify-packages/erimar_mark7_connector-0.1.0.difypkg"
-          file "$RUNNER_TEMP/dify-packages/erimar_mark7_connector-0.1.0.difypkg"
+            -o "$RUNNER_TEMP/dify-packages/erimar_mark7_connector-0.1.1.difypkg"
+          test -s "$RUNNER_TEMP/dify-packages/erimar_mark7_connector-0.1.1.difypkg"
+          file "$RUNNER_TEMP/dify-packages/erimar_mark7_connector-0.1.1.difypkg"
       - name: Upload installable package for manual download
         uses: actions/upload-artifact@v4
         with:
-          name: erimar-mark7-dify-v0.1.0
+          name: erimar-mark7-dify-v0.1.1
           path: ${{ runner.temp }}/dify-packages/*.difypkg
           if-no-files-found: error
           retention-days: 7
