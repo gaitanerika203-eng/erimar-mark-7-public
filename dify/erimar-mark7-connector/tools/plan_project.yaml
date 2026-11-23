@@ -1,0 +1,38 @@
+identity:
+  name: plan_project
+  author: erikagaitan
+  label:
+    en_US: Plan project with MARK 7
+    es_ES: Planificar proyecto con MARK 7
+  icon: ../_assets/icon.svg
+description:
+  human:
+    en_US: Request an authorized MARK 7 plan. No deployment or payments.
+    es_ES: Solicita un plan de MARK 7 autorizado. Sin despliegues ni pagos.
+  llm: Send a project goal to the configured authorized API. Plan only. Do not provide secrets or personal data.
+parameters:
+  - name: goal
+    type: string
+    required: true
+    label:
+      en_US: Project goal
+      es_ES: Objetivo del proyecto
+    human_description:
+      en_US: Describe your app without secrets
+      es_ES: Describe tu aplicación sin secretos
+    llm_description: Project goal up to 500 characters; no PII or secrets
+    form: llm
+  - name: kind
+    type: string
+    required: false
+    label:
+      en_US: Application type
+      es_ES: Tipo de aplicación
+    human_description:
+      en_US: web-app, ecommerce, restaurant
+      es_ES: web-app, ecommerce, restaurante
+    llm_description: Short application type
+    form: llm
+extra:
+  python:
+    source: tools/plan_project.py
