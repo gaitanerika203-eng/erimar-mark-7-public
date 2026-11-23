@@ -4,7 +4,7 @@ identity:
   label:
     en_US: Plan project with MARK 7
     es_ES: Planificar proyecto con MARK 7
-  icon: ../_assets/icon.svg
+  icon: icon.svg
 description:
   human:
     en_US: Request an authorized MARK 7 plan. No deployment or payments.

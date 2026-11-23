@@ -1,0 +1,56 @@
+name: Build Dify Plugin Package in Cloud
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+      - feat/cloud-difypkg-build
+    paths:
+      - "dify/erimar-mark7-connector/**"
+      - ".github/workflows/dify-package-cloud.yml"
+  pull_request:
+    paths:
+      - "dify/erimar-mark7-connector/**"
+      - ".github/workflows/dify-package-cloud.yml"
+permissions:
+  contents: read
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate structure, Python and YAML
+        run: |
+          python -m pip install --disable-pip-version-check pyyaml
+          python - <<'PY'
+          import yaml, pathlib
+          root=pathlib.Path("dify/erimar-mark7-connector")
+          for path in root.rglob("*.yaml"):
+              yaml.safe_load(path.read_text(encoding="utf-8"))
+              print("validated:",path)
+          PY
+          cd dify/erimar-mark7-connector
+          python -m compileall -q .
+          python -m unittest discover -p "test_*.py" -v
+      - name: Install official Dify Plugin CLI on Ubuntu runner
+        run: |
+          curl --fail --location --retry 3 \
+            https://github.com/langgenius/dify-plugin-daemon/releases/latest/download/dify-plugin-linux-amd64 \
+            -o "$RUNNER_TEMP/dify"
+          chmod +x "$RUNNER_TEMP/dify"
+          "$RUNNER_TEMP/dify" version
+      - name: Generate real .difypkg
+        run: |
+          mkdir -p "$RUNNER_TEMP/dify-packages"
+          "$RUNNER_TEMP/dify" plugin package ./dify/erimar-mark7-connector \
+            -o "$RUNNER_TEMP/dify-packages/erimar_mark7_connector-0.1.0.difypkg"
+          test -s "$RUNNER_TEMP/dify-packages/erimar_mark7_connector-0.1.0.difypkg"
+          file "$RUNNER_TEMP/dify-packages/erimar_mark7_connector-0.1.0.difypkg"
+      - name: Upload installable package for manual download
+        uses: actions/upload-artifact@v4
+        with:
+          name: erimar-mark7-dify-v0.1.0
+          path: ${{ runner.temp }}/dify-packages/*.difypkg
+          if-no-files-found: error
+          retention-days: 7

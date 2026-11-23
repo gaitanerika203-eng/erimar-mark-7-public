@@ -1,5 +1,5 @@
 identity:
-  author: erikagaitan
+  author: gaitanerika203-eng
   name: erimar_mark7
   label:
     en_US: ERIMAR MARK 7
@@ -7,7 +7,7 @@ identity:
   description:
     en_US: Connect your own authorized MARK 7 HTTPS API
     es_ES: Conecta tu propia API HTTPS autorizada de MARK 7
-  icon: ../_assets/icon.svg
+  icon: icon.svg
   tags:
     - productivity
 credentials_for_provider:
