@@ -1,6 +1,6 @@
 identity:
   name: plan_project
-  author: erikagaitan
+  author: gaitanerika203-eng
   label:
     en_US: Plan project with MARK 7
     es_ES: Planificar proyecto con MARK 7
@@ -31,7 +31,7 @@ parameters:
     human_description:
       en_US: web-app, ecommerce, restaurant
       es_ES: web-app, ecommerce, restaurante
-    llm_description: Short application type
+    llm_description: Allowed: web-app, ecommerce, restaurant, mobile-app, api, automation, other
     form: llm
 extra:
   python:
