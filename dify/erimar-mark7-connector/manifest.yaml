@@ -8,7 +8,7 @@ label:
 description:
   en_US: Private-engine connector for authorized plan-only ERIMAR workflows
   es_ES: Conector al motor privado para planificar proyectos ERIMAR
-icon: _assets/icon.svg
+icon: icon.svg
 resource:
   memory: 134217728
   permission:
