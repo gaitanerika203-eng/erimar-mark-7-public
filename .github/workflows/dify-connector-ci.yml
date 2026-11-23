@@ -1,0 +1,30 @@
+name: Dify Connector Checks
+on:
+  push:
+    paths:
+      - 'dify/erimar-mark7-connector/**'
+      - '.github/workflows/dify-connector-ci.yml'
+  pull_request:
+    paths:
+      - 'dify/erimar-mark7-connector/**'
+      - '.github/workflows/dify-connector-ci.yml'
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate YAML and run isolated tests
+        run: |
+          python -m pip install pyyaml
+          python - <<'PY'
+          import pathlib, yaml
+          for path in pathlib.Path("dify/erimar-mark7-connector").rglob("*.yaml"):
+              yaml.safe_load(path.read_text())
+              print("valid yaml:", path)
+          PY
+          cd dify/erimar-mark7-connector
+          python -m compileall -q .
+          python -m unittest discover -p 'test_*.py' -v

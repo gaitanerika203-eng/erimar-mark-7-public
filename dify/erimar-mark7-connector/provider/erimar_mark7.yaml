@@ -1,0 +1,42 @@
+identity:
+  author: erikagaitan
+  name: erimar_mark7
+  label:
+    en_US: ERIMAR MARK 7
+    es_ES: ERIMAR MARK 7
+  description:
+    en_US: Connect your own authorized MARK 7 HTTPS API
+    es_ES: Conecta tu propia API HTTPS autorizada de MARK 7
+  icon: ../_assets/icon.svg
+  tags:
+    - productivity
+credentials_for_provider:
+  api_base_url:
+    type: text-input
+    required: true
+    label:
+      en_US: HTTPS API base URL
+      es_ES: Dirección HTTPS de la API
+    help:
+      en_US: Your authorized service URL, without /api/plan
+      es_ES: Dirección de tu servicio autorizado, sin /api/plan
+    placeholder:
+      en_US: https://your-service.example
+      es_ES: https://tu-servidor.example
+  api_token:
+    type: secret-input
+    required: true
+    label:
+      en_US: API bearer token
+      es_ES: Token de acceso a la API
+    help:
+      en_US: Per-tenant secret token, never commit it
+      es_ES: Token privado por usuario, nunca publicarlo
+    placeholder:
+      en_US: Enter secret token
+      es_ES: Introduce tu token
+extra:
+  python:
+    source: provider/erimar_mark7.py
+tools:
+  - tools/plan_project.yaml
