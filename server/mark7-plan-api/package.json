@@ -1,0 +1,8 @@
+{
+  "name": "erimar-mark7-plan-api",
+  "private": true,
+  "version": "0.2.0",
+  "license": "UNLICENSED",
+  "engines": {"node": "22.x"},
+  "scripts": {"test": "node --test test/*.test.cjs"}
+}
