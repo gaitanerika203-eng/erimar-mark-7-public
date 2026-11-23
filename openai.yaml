@@ -1,0 +1,6 @@
+interface:
+  display_name: "ERIMAR MARK 7 — PUBLIC"
+  short_description: "Diseña apps con tus recursos"
+  default_prompt: "Usa ERIMAR MARK 7 PUBLIC con mis recursos autorizados. Diseña una app y prepara un plan comprobable."
+policy:
+  allow_implicit_invocation: false

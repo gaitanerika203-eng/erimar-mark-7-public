@@ -1,0 +1,14 @@
+{
+  "name": "erimar-mark-7-public",
+  "version": "0.3.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "start": "node src/server.mjs",
+    "test": "node --test tests/*.test.mjs"
+  },
+  "dependencies": {}
+}

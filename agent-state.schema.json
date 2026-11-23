@@ -1,0 +1,73 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "MARK7 Agent Checkpoint",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "project_id",
+    "edition",
+    "version",
+    "objective",
+    "verified",
+    "pending",
+    "next",
+    "commit_refs",
+    "approval_state",
+    "updated_at"
+  ],
+  "properties": {
+    "project_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 100
+    },
+    "edition": {
+      "enum": [
+        "private",
+        "public"
+      ]
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+    },
+    "objective": {
+      "type": "string"
+    },
+    "verified": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "pending": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "next": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "commit_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "approval_state": {
+      "enum": [
+        "required",
+        "approved",
+        "not-required"
+      ]
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

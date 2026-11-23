@@ -1,0 +1,11 @@
+[build]
+  publish = "public"
+  functions = "netlify/functions"
+[[redirects]]
+  from = "/healthz"
+  to = "/.netlify/functions/mark7"
+  status = 200
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/mark7"
+  status = 200

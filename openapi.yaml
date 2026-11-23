@@ -1,0 +1,48 @@
+openapi: 3.0.3
+info:
+  title: ERIMAR MARK 7 PUBLIC Plan API
+  version: 0.3.0
+  description: Read-only capabilities and plan-only project route. No code execution or deployment.
+servers:
+  - url: https://YOUR-APP-DOMAIN.example
+paths:
+  /healthz:
+    get:
+      operationId: checkMark7Health
+      summary: Check service health
+      responses:
+        '200':
+          description: Healthy
+  /api/capabilities:
+    get:
+      operationId: listMark7Capabilities
+      summary: List public planning capabilities
+      responses:
+        '200':
+          description: Capabilities
+  /api/plan:
+    post:
+      operationId: createMark7Plan
+      summary: Create a safe, no-execution project plan
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [goal]
+              properties:
+                goal:
+                  type: string
+                  maxLength: 500
+                kind:
+                  type: string
+                capabilities:
+                  type: array
+                  items:
+                    type: string
+      responses:
+        '200':
+          description: Plan-only response
+        '400':
+          description: Invalid request

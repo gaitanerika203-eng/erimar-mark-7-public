@@ -1,0 +1,28 @@
+{
+  "interface": {
+    "displayName": "ERIMAR MARK 7 PUBLIC",
+    "shortDescription": "Create apps with guidance",
+    "longDescription": "Plan, structure, and prepare software projects from ideas. Create implementation plans, architecture, starter code, test checklists, telemetry guidance, security reviews, and portable project exports using only the tools and resources each user authorizes. Optional publishing workflows require the user's own hosting and explicit approval. This plugin does not provide its own live hosting or preconnected GitHub/Vercel accounts.",
+    "developerName": "ERIMAR",
+    "category": "Developer Tools",
+    "capabilities": [
+      "Interactive"
+    ],
+    "defaultPrompt": [
+      "Use MARK 7 PUBLIC to plan a sales funnel app and prepare a testable project.",
+      "Help me build a music portfolio app with secure deployment steps.",
+      "Explain how I can host my new app using my own Docker server."
+    ],
+    "logo": "assets/mark7-icon.png",
+    "composerIcon": "assets/mark7-icon.png",
+    "brandColor": "#AA771C"
+  },
+  "name": "erimar-mark-7-public",
+  "version": "0.3.0",
+  "description": "Asistente de creación de proyectos y aplicaciones para usuarios independientes. Planifica, prepara, prueba y documenta entregables usando solo recursos y conexiones autorizados por cada usuario.",
+  "author": {
+    "name": "ERIMAR"
+  },
+  "keywords": [],
+  "skills": "./skills"
+}

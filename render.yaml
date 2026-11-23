@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: erimar-mark-7-public
+    runtime: docker
+    healthCheckPath: /healthz
+    autoDeployTrigger: off

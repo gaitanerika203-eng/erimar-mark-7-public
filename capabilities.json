@@ -1,0 +1,15 @@
+{
+  "version": "0.2.0",
+  "capabilities": [
+    "requirements",
+    "architecture",
+    "code_generation",
+    "testing",
+    "telemetry",
+    "security_review",
+    "git_pr",
+    "portable_export",
+    "deployment_planning",
+    "state_resume"
+  ]
+}

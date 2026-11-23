@@ -1,0 +1,3 @@
+# Privacy policy — ERIMAR MARK 7 PUBLIC (repository prototype)
+
+This repository contains a local or user-deployed prototype. It does **not** send telemetry to ERIMAR. The in-memory AttentiCI events contain only event time, generated correlation ID, allowlisted stage/action/status and duration. No prompt text, usernames, emails, source code, client IDs, IP addresses or tokens are intentionally recorded by application telemetry. Hosting providers may independently collect operational logs under their own policies. Events disappear when the process stops. The deployment owner is responsible for consent, rate limits, retention, hosting terms and any additional data flows they introduce.

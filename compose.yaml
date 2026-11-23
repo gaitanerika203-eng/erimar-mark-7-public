@@ -1,0 +1,12 @@
+services:
+  mark7:
+    build: .
+    ports: ["127.0.0.1:3000:3000"]
+    environment: {PORT: "3000", NODE_ENV: production}
+    restart: unless-stopped
+    read_only: true
+    cap_drop: ["ALL"]
+    security_opt: ["no-new-privileges:true"]
+    tmpfs: ["/tmp"]
+    pids_limit: 100
+    mem_limit: 256m
