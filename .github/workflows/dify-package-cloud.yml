@@ -3,6 +3,7 @@ on:
   workflow_dispatch:
   push:
     branches:
+      - main
       - feat/cloud-difypkg-build
     paths:
       - "dify/erimar-mark7-connector/**"
