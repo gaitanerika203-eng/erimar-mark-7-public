@@ -31,7 +31,7 @@ parameters:
     human_description:
       en_US: web-app, ecommerce, restaurant
       es_ES: web-app, ecommerce, restaurante
-    llm_description: Allowed: web-app, ecommerce, restaurant, mobile-app, api, automation, other
+    llm_description: "Allowed: web-app, ecommerce, restaurant, mobile-app, api, automation, other"
     form: llm
 extra:
   python:
