@@ -1,4 +1,4 @@
-version: 0.1.0
+version: 0.1.1
 type: plugin
 author: gaitanerika203-eng
 name: erimar_mark7_connector
@@ -6,8 +6,8 @@ label:
   en_US: ERIMAR MARK 7 Connector
   es_ES: ERIMAR MARK 7 Conector
 description:
-  en_US: Private-engine connector for authorized plan-only ERIMAR workflows
-  es_ES: Conector al motor privado para planificar proyectos ERIMAR
+  en_US: Authorized plan-only connector for an independently hosted MARK 7 HTTPS planning API
+  es_ES: Conector autorizado a una API HTTPS independiente de planificación MARK 7
 icon: icon.svg
 resource:
   memory: 134217728
